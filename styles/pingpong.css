@@ -1,0 +1,250 @@
+/*@font-face { font-family: Delicious; src: url('Delicious-Roman.otf'); } */
+ /*@font-face { font-family: Delicious; font-weight: bold; src: url('Delicious-Bold.otf');}*/
+@font-face { font-family: DSEG7-Classic; src: url('DSEG7-Classic/DSEG7Classic-Regular.ttf'); }
+@font-face { font-family: Segment7Standard; src: url('segment7/Segment7Standard.otf'); }
+
+
+body {
+	width: 100%;
+	height: 100%;
+	min-width: 600px;
+	max-width: 2000px;
+}
+
+#p1 {
+	float: left;
+	width: 40%
+	height: 69%;
+	max-width: 40%;
+	border: solid 1px black;
+}
+
+#p2 {
+	float: left;
+	width: 40%
+	height: 69%;
+	margin-left: 18%;
+	max-width: 40%;
+	border: solid 1px black;
+}
+
+#p1elements {
+	width: 100%;
+	height: 100%;
+}
+
+#p2elements {
+	width: 100%;
+	height: 100%;
+}
+
+
+#matchstatus {
+	clear: both;
+	position: bottom;
+	width: 98.25%;
+	height: 29%;
+	margin-top: 5%;
+	border: solid 1px black;
+
+}
+
+#matchgamestable {
+	max-width: 97%;
+}
+
+#p1servestatus{
+	float: left;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 18%;
+	width: 15%;
+	height: 100px;
+}
+
+#p1currentscore {
+	float: left;
+	width: 65%;
+	height: 300px;
+	font-family: Segment7Standard;
+	color: red; 
+	font-size: 256px;
+	text-align: center;
+	background-color: gray;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	border: none;
+}
+
+#p1name {
+	clear: both;
+	margin-left: 25%;
+	width: 65%;
+	height: 40px;
+	text-align: center;
+	font-size: 32px;
+	background-color: black;
+	color: lime;
+	border: none;
+}
+
+#p2servestatus{
+	float: left;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 18%;
+	width: 15%;
+	height: 100px;
+}
+
+#p2currentscore {
+	float: left;
+	width: 65%;
+	height: 300px;
+	font-family: Segment7Standard;
+	color: red;
+	font-size: 256px;
+	text-align: center;
+	background-color: gray;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	border: none;
+}
+
+#p2name {
+	clear: both;
+	margin-left: 25%;
+	width: 65%;
+	height: 40px;
+	text-align: center;
+	font-size: 32px;
+	background-color: black;
+	color: lime;
+	border: none;
+}
+
+#p1matchname, #p2matchname { 
+	border: none;
+}
+
+#toprow, #middlerow, #bottomrow {
+	text-align: center;
+}
+
+input.boxname {
+	width: 150%;
+	text-align: center;
+	font-size: 32px;
+	background-color: gray;
+}
+
+input.boxes {
+	margin-left: 30%;
+	width: 90%;
+	text-align: center;
+	font-size: 64px;
+	background-color: gray;
+	border: none;
+}
+
+#currentgamecount {
+	position: fixed;
+	top: 6%;
+	left: 48%;
+	width: 10%;
+	height: 20%;
+	font-family: Segment7Standard;
+	text-align: center;
+	font-size: 108px;
+	background-color: gray;
+	border: none;
+}
+
+#currentGameLabel {
+	position: fixed;
+	top: -5%;
+	left: 45s.5%;
+	font-size: 32px;
+
+}
+
+p { color: lime; }
+
+#p1add1 {
+	position: fixed;
+	top: 30%;
+	left: 38%;
+	width: 2.5%;
+	height: 6%;
+	font-size: 30px;
+	background-color: green;
+}
+
+#p1minus1 {
+	position: fixed;
+	top: 38%;
+	left: 38%;
+	width: 2.5%;
+	height: 6%;
+	font-size: 30px;
+	background-color: red;
+}
+
+#p2add1 {
+	position: fixed;
+	top: 30%;
+	left: 65.5%;
+	width: 2.5%;
+	height: 6%;
+	font-size: 30px;
+	background-color: green;
+}
+
+#p2minus1 {
+	position: fixed;
+	top: 38%;
+	left: 65.5%;
+	width: 2.5%;
+	height: 6%;
+	font-size: 30px;
+	background-color: red;
+}
+
+#settingsbutton {
+    background:url(../img/settingshead1.jpg); 
+	background-image: center100;
+    cursor: pointer;
+    border: none;
+    width: 69px;
+    height: 71px;
+}
+
+#newgame {
+	background-color: transparent;
+	border: none;
+	color: red;
+	margin-bottom: 5%;
+
+}
+
+#newgame:hover { color: lime; }
+
+#p1g6:enabled {	color: white; }
+#p1g6:disabled { color: black; }
+#p1g7:enabled {	color: white; }
+#p1g7:disabled { color: black; }
+
+/*.bg {*/ 
+    /* The image used */
+    /*background-image: url("img_girl.jpg");*/
+
+    /* Full height */
+    /*height: 100%; */
+
+    /* Center and scale the image nicely */
+    /*background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/
