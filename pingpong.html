@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="scripts/pingpong.js"></script>
+        <script src="scripts/menu.js"></script>
+        <!-- <script src="scripts/data.js"></script> -->
+        <!-- <link rel="stylesheet" media="screen" href="styles/segment7" type="text/css"/> -->
+        <!-- <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/segment7" type="text/css"/> -->
+        <link rel="stylesheet" href="styles/pingpong.css">
+        <link rel="stylesheet" href="styles/menu.css">
+        <!-- <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> -->
+		<!-- <script src="jquery.qtip-1.0.0-rc3.min.js" type="text/javascript"></script> -->
+        <script type="text/javascript" src="scripts/webiopi.js"></script>
+    
+
+
+    
+    </head>
+
+<script type="text/javascript">
+     webiopi().ready(function() {
+        // Create a "Light" labeled button for GPIO 17
+        var P1ButtonStatus = w().digitalRead(23);
+        var P2ButtonStatus = w().digitalRead(24);
+        console.log(P1ButtonStatus);
+        console.log(P2ButtonStatus);
+
+        // Append button to HTML element with ID="controls" using jQuery
+        // $("#controls").append(button);
+
+        // Refresh GPIO buttons
+        // pass true to refresh repeatedly of false to refresh once
+                webiopi().refreshGPIO(true);
+    });
+</script>
+
+<script>
+var gamecounter;
+
+if (gamecounter == 0) {
+
+	document.getElementById('currentgamecount').value = 1;
+}
+
+// var data = "<%= data %>";
+// console.log(data);
+
+</script>
+
+    <body bgcolor="#000">
+<div id="scoreboardWrapper">
+
+<h1 style="color: lime">{{response}}</h1>
+
+	
+	<div id="p1">
+	<div id="p1elements">
+		<!-- <p>Test p1 area</p> -->
+		<div id="p1servestatus"></div>
+		<input type="text" id="p1currentscore" placeholder="XX">
+		<input type="text" id="p1name" placeholder="Player 1">
+	</div>
+	</div>
+
+	<div id="p2">
+	<div id="p2elements">
+		<!-- <p>Test p2 area</p> -->
+		<div id="p2servestatus"></div>
+		<input type="text" id="p2currentscore" placeholder="XX">
+		<input type="text" id="p2name" placeholder="Player 2">
+	</div>
+	</div>
+	
+	
+	<div id="matchstatus">
+		<div id="matchgamestable">
+		<table id="matchgames">
+			<tr id="toprow" style="color: lime; text-align: center; font-weight: bolder; font-size: 24px">
+				<td>GAME</td>
+				<td id="game1">1</td>
+				<td id="game2">2</td>
+				<td id="game3">3</td>
+				<td id="game4">4</td>
+				<td id="game5">5</td>
+				<td id="game6">6</td>
+				<td id="game7">7</td>
+			</tr>
+			<tr id="middlerow">
+				<td><input type="text" id="p1matchname" class="boxname" placeholder="Player 1"></td>
+				<td><input type="text" id="p1g1" class="boxes"></td>
+				<td><input type="text" id="p1g2" class="boxes"></td>
+				<td><input type="text" id="p1g3" class="boxes"></td>
+				<td><input type="text" id="p1g4" class="boxes"></td>
+				<td><input type="text" id="p1g5" class="boxes"></td>
+				<td><input type="text" id="p1g6" class="boxes"></td>
+				<td><input type="text" id="p1g7" class="boxes"></td>
+			</tr>
+			<tr id="bottomrow">
+				<td><input type="text" id="p2matchname" class="boxname" placeholder="Player 2"></td>
+				<td><input type="text" id="p2g1" class="boxes"></td>
+				<td><input type="text" id="p2g2" class="boxes"></td>
+				<td><input type="text" id="p2g3" class="boxes"></td>
+				<td><input type="text" id="p2g4" class="boxes"></td>
+				<td><input type="text" id="p2g5" class="boxes"></td>
+				<td><input type="text" id="p2g6" class="boxes"></td>
+				<td><input type="text" id="p2g7" class="boxes"></td>
+			</tr>
+		</table>
+		</div>
+	</div>
+	
+</div>
+
+<div id="informationDisplayArea"></div>
+
+</div>
+
+<div id="currentGame">
+	<p id="currentGameLabel">Current Game</p><br>
+	<!-- <label for="currentsetcount" style="color: lime">Current Set</label> -->
+	<input type="text" id="currentgamecount" value="1">
+	<button type="submit" id="p1add1" onclick="p1add1()">+</button>
+	<button type="submit" id="p1minus1" onclick="p1minus1()">-</button>
+	<button type="submit" id="p2add1" onclick="p2add1()">+</button>
+	<button type="submit" id="p2minus1" onclick="p2minus1()">-</button>
+</div>
+
+<div id="setupitems">
+		<span style="font-size:30px;cursor:pointer;color:lime" onclick="openNav()">&#9776; Settings</span>
+		<button type="submit" id="newgame" onclick="history.go(0)" style="cursor: pointer;">New Game</button>
+</div>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<p class="lb">Player 1 Name:</p>
+		<input type="text" id="getplayer1name" required><br>
+		<p class="lb">Player 2 Name:</p>
+		<input type="text" id="getplayer2name" required><br>
+		<p class="lb">Select Number Of Games:</p>
+		<select name="Number of games desired?" id="getnumberofgames">
+			<option value="1">1</option>
+			<option value="3">3</option>
+			<option value="5">5</option>
+			<option value="7">7</option>
+		</select><br>
+		<p class="lb">Select Number of Points to win a Game:</p>
+		<select name="How many points to win game?" id="gethowmanypoints">
+			<option value="11">11</option>
+			<option value="21">21</option>
+		</select><br>
+		<p class="lb">Who is first player to serve?</p>
+		<select name="First to serve?" id="getfirsttoserve">
+			<option value="1">Player 1</option>
+			<option value="2">Player 2</option>
+		</select><br><br>
+	<button type="submit" id="sendgamedata" onclick="settingswindow()">Game On!!</button>
+</div>
+
+
+
+    </body>
+</html>
